@@ -15,6 +15,7 @@ This project is in Machine Learning with Scikit-Learn. It is Supervised Machine 
 - Hyperparameter tuning
 - Predicting the test dataset
 - Evaluating the model
+- Deployement on Heroku
 
 
 
