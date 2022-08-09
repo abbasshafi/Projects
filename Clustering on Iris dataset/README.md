@@ -16,7 +16,7 @@ This project is in Machine Learning with Scikit-Learn. It is Unsupervised Machin
 
 ## Dataset images
 
-![Project Image](https://github.com/abbasshafi/Projects/blob/main/Clustering%20on%20Iris%20dataset/Thumbnail%203.png)
+![Elbow Method](https://github.com/abbasshafi/Projects/blob/main/Clustering%20on%20Iris%20dataset/Thumbnail%203.png)
 
-![Project Image](https://github.com/abbasshafi/Projects/blob/main/Clustering%20on%20Iris%20dataset/Predicted%20Clusters%20With%20Centroids.png)
+![Predicted Centers with Centrois](https://github.com/abbasshafi/Projects/blob/main/Clustering%20on%20Iris%20dataset/Predicted%20Clusters%20With%20Centroids.png)
 
