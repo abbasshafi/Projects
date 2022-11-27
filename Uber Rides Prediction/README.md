@@ -2,7 +2,7 @@
 # Project#1: 
 # Uber Rides Prediction
 
-This project is in Machine Learning with Scikit-Learn. It is Supervised Machine Learning algorithm Linear Regression based problem. Main goal of this algorithm was to predict number of rides available given different features. I have achived 86% accuracy. This model is saved using pickle and deployed using Heroku.
+This project is in Machine Learning with Scikit-Learn. It is a Supervised Machine Learning algorithm Linear Regression based problem. The main goal of this algorithm was to predict the number of rides available given different features. I have achieved 86% accuracy. This model is saved using pickle and deployed using Heroku.
 
 
 ## Steps Performed
