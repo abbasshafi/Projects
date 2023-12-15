@@ -1,2 +1,2 @@
 # Projects
-This repository contain the Projects made.
+This repository contains different kind of Projects.
