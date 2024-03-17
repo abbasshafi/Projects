@@ -13,13 +13,13 @@ Develop a system that recommends restaurants to users, considering both their pa
        Stop word removal
        Stemming or Lemmatization
        Text cleaning
-4.Model Building:
-5.Recommendation Generation:
+4. Model Building:
+5. Recommendation Generation:
 
 #Steps:
 1. Data Acquisition
-2 Data Preprocessing
-3.Model Selection
+2. Data Preprocessing
+3. Model Selection
 4. Feature Engineering
 5. Model Training
 6. Recommendation Generation
