@@ -1,14 +1,14 @@
 # Clustering Technique on Iris Flower
 
-This project is in Machine Learning with Scikit-Learn. It is Unsupervised Machine Learning based problem. Main goal of this problem was to predict Different Clusters based on given Iris Flower dataset. This data was trained on K-Means algorithm.
-## Concise Steps
+This project is in Machine Learning with Scikit-Learn. It is an Unsupervised Machine Learning-based problem. The main goal of this problem was to predict Different Clusters based on the given Iris Flower dataset. This data was trained on the K-Means algorithm.
 
+## Concise Steps:
 - Importing the main libraries.
 - Reading and Understanding the Dataset.
 - Preprocessing the Dataset.
 - Exploratory Data Analysis.
 - Preparing the data for model building.
-- Using Elbow Method For Optimal Number of Clusters.
+- Using the Elbow Method For the Optimal Number of Clusters.
 - Defining the model.
 - Predicting the test dataset.
 - Visualizing Predicted Clusters with their Centroids.

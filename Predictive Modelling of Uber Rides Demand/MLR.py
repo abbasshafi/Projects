@@ -5,7 +5,7 @@ import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
-data = pd.read_csv('/home/abbas/Projects/Uber-Rides-Prediction/taxi.csv')
+data = pd.read_csv("C:/Users/HP/Documents/Github Repo's/Projects/Predictive Modelling of Uber Rides Demand/taxi.csv")
 # print(data.head())
 
 data_x = data.iloc[:,0:-1].values
