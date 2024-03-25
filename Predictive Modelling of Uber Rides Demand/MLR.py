@@ -17,10 +17,10 @@ X_train,X_test,y_train,y_test = train_test_split(data_x,data_y,test_size=0.3,ran
 reg = LinearRegression()
 reg.fit(X_train,y_train)
 
-print("Train Score",reg.score(X_train,y_train))
-print("Test Score",reg.score(X_test,y_test))
+print("Train Score is: ",reg.score(X_train,y_train))
+print("Test Score is: ",reg.score(X_test,y_test))
 
 pickle.dump(reg, open("taxi.pkl",'wb'))
 model = pickle.load(open("taxi.pkl",'rb'))
 
-print(model.predict([[100,2500000,15000,10]]))
+print(model.predict([[100,25000,15000,10]]))
