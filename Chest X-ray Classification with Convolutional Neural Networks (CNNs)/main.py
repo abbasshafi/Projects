@@ -10,28 +10,33 @@ app=FastAPI()
 MODEL_PATH = "C:/Users/HP/Documents/Github Repo's/Projects/Chest X-ray Classification with Convolutional Neural Networks (CNNs)/Pneumonia_cnn_model.h5"
 MODEL = tf.keras.models.load_model(MODEL_PATH)
 
-# @app.get('/')
-# def welcome():
-#     return "Welcome to the dashboard of Medical app!"
+@app.get('/')
+def welcome():
+    return "Welcome to the dashboard of Medical app!"
 
-# def read_file_as_image(data) -> np.ndarray:
-#     image= np.array(Image,open(BytesIO(data)))
-#     image_batch=np.expand_dims(image,0)
-#     prediction= MODEL.predict(image_batch)
-#     predictied_class=np.argmax(prediction[0])
-#     confidence=np.max(prediction[0])
-#     return {
-#         'class':predicted_class,
-#         'confidence':float(confidence)
-#     }
+def read_file_as_image(data) -> np.ndarray:
+    image= Image.open(BytesIO(data))
+    image_array=np.array(image)
+    print("Image shape:", image_array.shape)
+    # image_batch=np.expand_dims(image,0)
+    # prediction= MODEL.predict(image_batch)
+    # predictied_class=np.argmax(prediction[0])
+    # confidence=np.max(prediction[0])
+    return image_array
+    # {
+    #     'class':predicted_class,
+    #     'confidence':float(confidence)
+    # }
 
 
-# @app.post('/predict')
-# async def predict(
-#     file: UploadFile=File(...)
-# ):
-#     bytes= await file.read()
-#     return "File Uploaded!"
+@app.post('/predict')
+async def predict(
+    file: UploadFile=File(...)
+):
+    image=read_file_as_image(await file.read())
+    return 
+    # bytes= await file.read()
+    # return "File Uploaded!"
 
 
 # from fastapi import FastAPI, File, UploadFile
@@ -117,52 +122,52 @@ MODEL = tf.keras.models.load_model(MODEL_PATH)
 #     }
 
 
-from fastapi import FastAPI, File, UploadFile
-import numpy as np
-from PIL import Image
-import tensorflow as tf
-from io import BytesIO
+# from fastapi import FastAPI, File, UploadFile
+# import numpy as np
+# from PIL import Image
+# import tensorflow as tf
+# from io import BytesIO
 
-app = FastAPI()
+# app = FastAPI()
 
-# Load the Keras model
-# MODEL_PATH = "C:/Users/HP/Documents/Github Repo's/Projects/Chest X-ray Classification with Convolutional Neural Networks (CNNs)/my_model.keras"
-# MODEL = tf.keras.models.load_model(MODEL_PATH)
+# # Load the Keras model
+# # MODEL_PATH = "C:/Users/HP/Documents/Github Repo's/Projects/Chest X-ray Classification with Convolutional Neural Networks (CNNs)/my_model.keras"
+# # MODEL = tf.keras.models.load_model(MODEL_PATH)
 
-Class_names = ["Pneumonia", "Normal"]
+# Class_names = ["Pneumonia", "Normal"]
 
-# Define a function to preprocess the image
-def preprocess_image(image):
-    # Resize the image to match the input shape of the model (assuming it's 150x150)
-    image = image.resize((150, 150))
-    # Convert image to numpy array and normalize pixel values
-    image_array = np.array(image) / 255.0
-    # Expand dimensions to create a batch of size 1
-    image_batch = np.expand_dims(image_array, axis=0)
-    return image_batch
+# # Define a function to preprocess the image
+# def preprocess_image(image):
+#     # Resize the image to match the input shape of the model (assuming it's 150x150)
+#     image = image.resize((150, 150))
+#     # Convert image to numpy array and normalize pixel values
+#     image_array = np.array(image) / 255.0
+#     # Expand dimensions to create a batch of size 1
+#     image_batch = np.expand_dims(image_array, axis=0)
+#     return image_batch
 
-@app.post('/predict')
-async def predict(file: UploadFile = File(...)):
-    # Read the uploaded file as an image
-    img = Image.open(BytesIO(await file.read()))
-    # Preprocess the image
-    img_batch = preprocess_image(img)
-    # Make predictions using the model
-    predictions = MODEL.predict(img_batch)
-    # Get the predicted class index and confidence
-    predicted_class_index = np.argmax(predictions[0])
-    confidence = np.max(predictions[0])
-    # Get the class label
-    predicted_class = Class_names[predicted_class_index]
+# @app.post('/predict')
+# async def predict(file: UploadFile = File(...)):
+#     # Read the uploaded file as an image
+#     img = Image.open(BytesIO(await file.read()))
+#     # Preprocess the image
+#     img_batch = preprocess_image(img)
+#     # Make predictions using the model
+#     predictions = MODEL.predict(img_batch)
+#     # Get the predicted class index and confidence
+#     predicted_class_index = np.argmax(predictions[0])
+#     confidence = np.max(predictions[0])
+#     # Get the class label
+#     predicted_class = Class_names[predicted_class_index]
     
-    # Modify the return statement to print the predicted class
-    if predicted_class == "Normal":
-        result = "Normal"
-    else:
-        result = "Pneumonia"
+#     # Modify the return statement to print the predicted class
+#     if predicted_class == "Normal":
+#         result = "Normal"
+#     else:
+#         result = "Pneumonia"
         
-    return {
-        'result': result,
-        'confidence': float(confidence)
-    }
+#     return {
+#         'result': result,
+#         'confidence': float(confidence)
+#     }
 
